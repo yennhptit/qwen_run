@@ -90,7 +90,7 @@ for i, data in enumerate(items, start=1):
         ).images[0]
 
         # Save output image
-        output_filename = os.path.join(output_folder, f"{json_id}_output_qwen_gpu.png")
+        output_filename = os.path.join(output_folder, f"{json_id}_output_qwen_comment_dataset.png")
         edited_image.save(output_filename)
         print(f"[{i}/{num_to_process}] Saved -> {output_filename}")
 
