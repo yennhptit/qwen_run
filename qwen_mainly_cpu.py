@@ -63,8 +63,8 @@ os.makedirs(output_folder, exist_ok=True)
 
 total_items = len(comments_data)
 
-start_index = 0
-end_index = 1000
+start_index = 2000
+end_index = 3000
 
 start_index = max(0, min(start_index, total_items))
 end_index = max(start_index + 1, min(end_index, total_items))
@@ -79,14 +79,14 @@ for i, data in enumerate(items, start=1):
     json_id = data.get("prefix_id", f"id_{current_index}")
 
 
-    print(f"\n[{i}/{num_to_process}] 🖼️ Processing index {current_index} -> {json_id}")
+    print(f"\n[{i}/{num_to_process}] Processing index {current_index} -> {json_id}")
 
     try:
         image = load_image(image_url).convert("RGB")
         max_size = 1024
         image.thumbnail((max_size, max_size), Image.LANCZOS)
     except Exception as e:
-        print(f"[{i}/{num_to_process}] ⚠️ Skipped {json_id} (cannot load image: {e})")
+        print(f"[{i}/{num_to_process}] Skipped {json_id} (cannot load image: {e})")
         continue
 
     try:
