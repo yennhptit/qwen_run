@@ -17,3 +17,11 @@ accelerate
 peft==0.17.1
 
 -U "huggingface_hub[cli]"
+
+
+# Split into folder (Change image_dir)
+python split_into_folder.py
+
+
+# Push to Hugging Face Hub (Change Local_Dir and access token in push.py)
+python push.py
